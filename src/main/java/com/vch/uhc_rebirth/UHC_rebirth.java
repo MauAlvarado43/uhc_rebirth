@@ -1,5 +1,6 @@
 package com.vch.uhc_rebirth;
 
+import commands.HealthReset;
 import listeners.Death;
 import listeners.Food;
 import org.bukkit.Bukkit;
@@ -16,6 +17,7 @@ public final class UHC_rebirth extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        //Listeners
         Bukkit.getPluginManager().registerEvents(new PlayerJoin(), this);
         Bukkit.getPluginManager().registerEvents(new Death(), this);
         Bukkit.getPluginManager().registerEvents(new Food(this), this);
@@ -26,6 +28,9 @@ public final class UHC_rebirth extends JavaPlugin {
         Melon.deleteMelon();
         PlayerApple.register();
         DragonBreath.register();
+
+        //Commands
+        getCommand("reset-health").setExecutor(new HealthReset());
 
     }
 

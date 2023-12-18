@@ -6,7 +6,7 @@
 
     <groupId>com.vch</groupId>
     <artifactId>UHC_rebirth</artifactId>
-    <version>0.2.10</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>UHC_rebirth</name>
