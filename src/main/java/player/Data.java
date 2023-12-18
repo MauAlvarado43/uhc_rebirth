@@ -16,9 +16,7 @@ public class Data implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public String getTeam() {
-        return this.team;
-    }
+    public String getTeam() { return this.team; }
     public void setTeam(String team) {
         this.team = team;
     }
@@ -40,6 +38,5 @@ public class Data implements Serializable {
     public void setHadTeam(boolean hadTeam) {
         this.hadTeam = hadTeam;
     }
-
 
 }
