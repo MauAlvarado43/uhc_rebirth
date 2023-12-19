@@ -2,15 +2,12 @@ package com.vch.uhc_rebirth;
 
 import commands.HealthReset;
 import commands.PlayerHead;
-import listeners.Death;
-import listeners.Food;
-import listeners.PlayerDeath;
+import listeners.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import recipes.DragonBreath;
 import recipes.HyperGoldenApple;
 import recipes.Melon;
-import listeners.PlayerJoin;
 import recipes.PlayerApple;
 
 
@@ -24,6 +21,7 @@ public final class UHC_rebirth extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new Death(), this);
         Bukkit.getPluginManager().registerEvents(new Food(this), this);
         Bukkit.getPluginManager().registerEvents(new PlayerDeath(), this);
+        Bukkit.getPluginManager().registerEvents(new Respawn(this), this);
 
         //Item Recipes
         HyperGoldenApple.register();

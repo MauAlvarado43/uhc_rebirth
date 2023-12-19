@@ -11,8 +11,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.DoubleChestInventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.block.Skull;
 
 public class PlayerDeath implements Listener {
@@ -25,11 +23,6 @@ public class PlayerDeath implements Listener {
         Location loc = player.getLocation();
         Block left = loc.getBlock();
         Block right = loc.clone().add(0,0,1).getBlock();
-
-        ItemStack playerHead = new ItemStack(Material.PLAYER_HEAD);
-        SkullMeta playerHeadMeta = (SkullMeta)playerHead.getItemMeta();
-        playerHeadMeta.setOwningPlayer(player);
-        playerHead.setItemMeta(playerHeadMeta);
 
         left.setType(Material.CHEST);
         right.setType(Material.CHEST);
@@ -68,9 +61,16 @@ public class PlayerDeath implements Listener {
 
         fence.setType(Material.NETHER_BRICK_FENCE);
         head.setType(Material.PLAYER_HEAD);
+
         Skull skull = (Skull) head.getState();
         skull.setOwningPlayer(player);
         skull.update();
+
+        //DeathMessages
+//        String killer = e.getEntity().getKiller().getName();
+//        Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD +  "------------------------------------------");
+//        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + player.getName() + " fue masacrado por " + killer);
+//        Bukkit.getConsoleSender().sendMessage(ChatColor.GOLD +  "------------------------------------------");
 
     }
 
