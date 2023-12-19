@@ -8,4 +8,6 @@ description: Minecraft Ultra Hardcore Plugin
 commands:
   reset-health:
     description: "Reset current health to 20HP"
+  player-head:
+    description: "Gives current player head"
 
